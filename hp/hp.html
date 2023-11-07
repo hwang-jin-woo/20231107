@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HpReservation</title>
+    <link rel="stylesheet" href="hp.css">
+</head>
+<body>
+    <header >
+        <div class="header">
+            <div class="brand-icon">HP</div>
+            <h2>병원 예약시스템</h2>
+        </div>
+    </header>
+    <nav class="nav">
+        <ul >
+            <li><Link to="./home">진료예약</Link>              
+                <ul>
+                    <li><Link to="./reservation">예약하기</Link></li>
+                    <li><Link to="#">예약확인</Link></li>
+                    <li><Link to="#">예약자현황</Link></li>
+                    <li><Link to="#">병원정보</Link></li>
+                </ul>
+            </li>
+            <li><Link to="./mg">나의 관리</Link>
+                <ul>
+                    <li><Link to="https://www.hira.or.kr/dummy.do?pgmid=HIRAA030009200000"target="_blank">병원내역조회</Link></li>
+                    <li><Link to="https://www.kahp.or.kr/ho/medi/intro.do"target="_blank">건강검진</Link></li>
+                    <li><Link to="">BMI측정</Link></li>
+                </ul>
+            </li>
+            <li><Link to="./sc">검색</Link>
+                <ul>
+                    <li><Link to="">가까운병원</Link></li>
+                    <li><Link to="">인기병원</Link></li>
+                    <li><Link to="">내가 가본병원</Link></li>
+                </ul>
+            </li>
+            <li><Link to="./faq">FAQ</Link></li>
+        </ul> 
+        <div >
+            <div class="search">
+                <input class="inputsearch" value=검색어를입력하세요.
+                onChange= placeholder="검색어를 입력하세요." />
+                <button class="searchbtn"onClick=()=>검색</button>
+              </div>
+        </div>
+        <sidebar class="sidebar">
+            <div class="barbrand">        
+                <div class="sidebabrand-icon">HP</div>
+                <h2>병원 예약시스템</h2>
+              </div>
+              <div class="Sidebaicon1">
+                <button onClick={AdminClick}>
+                  <iconify-icon icon="tdesign:login"width="160" height="50"></iconify-icon><h3>로그인</h3>
+                </button>
+                <button onClick={mbClick}>
+                  <iconify-icon icon="ph:user"  width="160" height="50"></iconify-icon><h3>회원가입</h3>
+                </button>
+              </div>
+              <ul id="Sidebamenu">
+                <li class="Sidebamenu-item">
+                  <button class="Sidebamenu-button">
+                    <iconify-icon class="menu-icon" icon="majesticons:chevron-down-line"></iconify-icon>
+                    진료예약
+                  </button>
+                  <ul class="Sidebamenu-sub">
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">예약하기</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">예약확인</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">예약자 현황</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">병원정보</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li class="Sidebamenu-item">
+                  <button class="Sidebamenu-button">
+                    <iconify-icon class="Sidebamenu-icon" icon="majesticons:chevron-down-line"></iconify-icon>
+                    나의 관리
+                  </button>
+                  <ul class="Sidebamenu-sub">
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="https://www.hira.or.kr/dummy.do?pgmid=HIRAA030009200000">병원내역 조회</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="https://www.kahp.or.kr/ho/medi/intro.do">건강검진</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">BMI측정</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">병원정보</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li class="Sidebamenu-item">
+                  <button class="Sidebamenu-button">
+                    <iconify-icon class="menu-icon" icon="majesticons:chevron-down-line"></iconify-icon>
+                    검색
+                  </button>
+                  <ul class="Sidebamenu-sub">
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">가까운 병원</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">인기병원</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">내가 가본 병원</Link>
+                    </li>
+                    <li class="Sidebamenu-sub-item">
+                      <Link to="#">병원정보</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li class="Sidebamenu-item">
+                  <button class="Sidebamenu-button">
+                    <iconify-icon class="Sidebamenu-icon" icon="majesticons:chevron-down-line"></iconify-icon>
+                    FAQ
+                  </button>
+                </li>
+              </ul>
+        </sidebar>
+    </nav>
+    <main>
+        <section class="section">
+            <div class="login-wrap">
+                <div class="login-id-wrap">
+                  <input placeholder="아이디" type="text" class="input-id"></input>
+                </div>
+                <div class="login-pw-wrap">
+                  <input placeholder="비밀번호" type="password" class="input-pw"></input>
+                </div>
+                <div class="login-btn-wrap">
+                  <button class="login-btn"onClick={AdminClick}>로그인</button>
+                </div>
+                <div class="under-login">
+                  <span class="stay-check">
+                    <input type="checkbox" name="stay-btn" value="stay" class="stay-checkbox" />로그인 상태 유지
+                  </span>
+                </div>
+                <div class="login-btn1">         
+                  <button onClick={mbClick}>회원가입</button>       
+                  <button onClick={pageClick}>내정보수정</button>        
+                </div>
+            </div>
+              <div>
+                <ul class="buttons">        
+                    <li><Link to={"/reservation"}><button class="button"><h2>예약하기</h2></button></Link></li>
+                    <li><Link to={"/mg"}><button class="button"><h2>예약확인</h2></button></Link></li>
+                    <li><Link to={"/home"}><button class="button"><h2>예약자 현황</h2></button></Link></li>
+                    <li><Link to={"/home"}><button class="button"><h2>병원정보</h2></button></Link></li>        
+                  </ul>
+              </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div>
+            <h3>copyright hwang-jin-woo</h3>
+        </div>
+    </footer>
+</body>
+</html>
